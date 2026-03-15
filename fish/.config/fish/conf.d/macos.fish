@@ -9,11 +9,10 @@ end
 
 
 # add enviroments
-fish_add_path /opt/homebrew/opt/node@22/bin
-fish_add_path $HOME/.local/bin
-fish_add_path /opt/homebrew/bin
-fish_add_path /Users/nikoleontiev/Library/Application Support/JetBrains/Toolbox/scripts
+set -gx -a PATH $HOME/.local/bin
+set -gx -a PATH /opt/homebrew/bin
 set -gx HOMEBREW_NO_AUTO_UPDATE 1
+set -gx -a PATH /Users/nikoleontiev/Library/Application Support/JetBrains/Toolbox/scripts
 set -gx EDITOR nvim
 
 # Setting PATH for all Python
