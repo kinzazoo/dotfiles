@@ -1,25 +1,61 @@
 {
     "layer": "top",
-    "spacing": 4, // Gaps between modules (4px)
-    "modules-left": ["hyprland/workspaces"],
+    "reload_style_on_change": true,
+    "spacing": 5, // Gaps between modules (4px)
+    "modules-left": ["hyprland/workspaces", "cpu", "memory", "temperature"],
     "modules-center": ["hyprland/window"],
     "modules-right": [
 		    "keyboard-state",
-			"hyprland/language", 
+		    "hyprland/language",
+        "network",
+        // "bluetooth",
 			"clock"
-	],
-    "hyprland/workspaces":
-    {
-     //"format": ""
-     "format-icons": "active"
+	  ],
+    
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "format-icons": {
+        "active": "",
+        "default": "",
+        "empty": ""
+      },
+      "persistent-workspaces": {
+         "*": [ 1,2,3,4,5 ]
+      }
     },
-    "battery": {
-        "format": "{capacity}% {icon}",
-        "format-icons": ["", "", "", "", ""]
-     },
+
+    "memory": {
+      "interval": 10,
+      //"on-click": "switch",
+      "state": {
+        "normal": 0,
+        "warning": 10,
+        "critical": 20
+      },
+      "format": "{used:0.1f}G/{total:0.1f}G",
+      "tooltip": false,
+      "tooltip-fromat": "" 
+    },
+//     "format-icons": "active"
+   "bluetooth":{
+     "format":"{num_connections}"
+   },
+
     "clock": {
         "format-alt": "{:%a, %d. %b  %H:%M}"
+    },
+    "network": {
+            "format-wifi": "",
+            "format-ethernet":"",
+            "format-disconnected": "",
+            "tooltip-format-disconnected": "Error",
+            "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+            "tooltip-format-ethernet": "{ifname}: {ipaddr} 🖧 ",
+            "on-click": "format-alt"
+
+        
     }
+    
 //   "hyprland/language": {
 //		   "":
   // }
