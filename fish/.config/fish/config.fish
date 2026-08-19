@@ -35,7 +35,7 @@ abbr -a --set-cursor='%' -- kgpa 'kubectl get pods -A -o wide %'
 abbr -a --set-cursor='%' -- kgn 'kubctl get nodes %'
 
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
-
+alias terraform="$(which tofu)"
 switch (uname)
     case Darwin
 		source ~/.config/fish/conf.d/macos.fish
